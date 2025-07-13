@@ -3,13 +3,12 @@ THIRD_PARTY_APPS = [
     "django_extensions",
     "corsheaders",
     "cities_light",
-    "rest_framework_simplejwt",
     "phonenumber_field",
     "django_rq",
 ]
 
 
-PROJECT_APPS = []
+PROJECT_APPS = ["aboutme.apps.AboutmeConfig"]
 DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
