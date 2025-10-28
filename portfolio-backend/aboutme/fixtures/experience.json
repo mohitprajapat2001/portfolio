@@ -1,0 +1,17 @@
+[
+    {
+        "role": "Software Engineer L-1",
+        "company": "trootech",
+        "start_date": "2024-06-01",
+        "end_date": "2025-06-01",
+        "description": "Worked as a **Software Engineer L-1** at [Trootech Business Solution](https://trootech.com). Contributed to backend development using **Django** and **Django REST Framework**, integrated **ElasticSearch** for optimized search performance, and collaborated with frontend teams using **React.js** for smooth API integration.\n\nKey highlights:\n- Developed scalable REST APIs with PostgreSQL\n- Implemented JWT-based authentication\n- Containerized deployments using Docker on AWS",
+        "is_current": false
+    },
+    {
+        "role": "Software Engineer L-2",
+        "company": "logicrays",
+        "start_date": "2025-07-01",
+        "description": "Currently working as a **Software Engineer L-2** at [LogicRays Technologies](https://logic.com). Focused on enhancing backend performance, writing efficient API endpoints, and improving developer productivity through reusable Django components.\n\nKey responsibilities:\n- Building and optimizing backend APIs using Django\n- Deploying applications using **Docker** and **AWS EC2**\n- Contributing to open-source Django packages like `django-otp-keygen` and `django-admin-bulk-io`",
+        "is_current": true
+    }
+]

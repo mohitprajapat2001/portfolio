@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Django"
+    },
+    {
+        "name": "Django REST Framework"
+    },
+    {
+        "name": "FastAPI"
+    },
+    {
+        "name": "Flask"
+    },
+    {
+        "name": "React"
+    },
+    {
+        "name": "PostgreSQL"
+    },
+    {
+        "name": "MySQL"
+    },
+    {
+        "name": "MongoDB"
+    },
+    {
+        "name": "Redis"
+    },
+    {
+        "name": "Celery"
+    },
+    {
+        "name": "Elasticsearch"
+    },
+    {
+        "name": "Docker"
+    },
+    {
+        "name": "AWS"
+    },
+    {
+        "name": "Git"
+    },
+    {
+        "name": "Nginx"
+    },
+    {
+        "name": "Linux"
+    },
+    {
+        "name": "HTML"
+    },
+    {
+        "name": "CSS"
+    },
+    {
+        "name": "JavaScript"
+    },
+    {
+        "name": "TypeScript"
+    },
+    {
+        "name": "Tailwind CSS"
+    },
+    {
+        "name": "Jenkins"
+    },
+    {
+        "name": "CI/CD"
+    },
+    {
+        "name": "REST API"
+    },
+    {
+        "name": "GraphQL"
+    },
+    {
+        "name": "OpenAI API"
+    },
+    {
+        "name": "LangChain"
+    },
+    {
+        "name": "Pytest"
+    },
+    {
+        "name": "VS Code"
+    },
+    {
+        "name": "Postman"
+    }
+]

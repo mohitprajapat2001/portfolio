@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 
 from .models import (
     Profile,
@@ -10,22 +11,18 @@ from .models import (
     Project,
     Experience,
     ContactMessage,
+    Company,
 )
 
 
 @admin.register(Profile)
-class ProfileAdmin(admin.ModelAdmin):
-    list_display = (
-        "id",
-        "created",
-        "modified",
-        "first_name",
-        "last_name",
-        "email",
-        "phone",
-        "profile_picture",
+class ProfileAdmin(UserAdmin):
+    fieldsets = UserAdmin.fieldsets + (
+        (
+            "Additional Info",
+            {"fields": ("profile_picture", "phone_number")},
+        ),
     )
-    list_filter = ("created", "modified")
 
 
 @admin.register(Address)
@@ -92,6 +89,12 @@ class ProjectAdmin(admin.ModelAdmin):
     )
     list_filter = ("created", "modified", "profile")
     raw_id_fields = ("technologies",)
+
+
+@admin.register(Company)
+class CompanyAdmin(admin.ModelAdmin):
+    list_display = ("id", "title", "description", "logo")
+    search_fields = ("title",)
 
 
 @admin.register(Experience)

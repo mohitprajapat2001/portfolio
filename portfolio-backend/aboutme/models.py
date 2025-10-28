@@ -2,6 +2,7 @@ from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from cities_light.models import City, Region, Country
 from django_extensions.db.models import TimeStampedModel, TitleDescriptionModel
+from django.contrib.auth.models import AbstractUser
 
 
 def _profile_picture(self, filename):
@@ -14,7 +15,7 @@ def _profile_picture(self, filename):
     :return: The file path where the profile picture is to be
              uploaded
     """
-    return "profile_pictures/%s/%s" % (self.full_name, filename)
+    return "profile_pictures/%s/%s" % (self.first_name, filename)
 
 
 def _upload_resumes(self, filename):
@@ -27,27 +28,30 @@ def _upload_resumes(self, filename):
     :return: The file path where the resume is to be
              uploaded
     """
-    return "resumes/%s/%s" % (self.profile.full_name, filename)
+    return "resumes/%s/%s" % (self.profile.username, filename)
 
 
-class Profile(TimeStampedModel):
-    first_name = models.CharField(max_length=100, verbose_name="First Name")
-    last_name = models.CharField(max_length=100, verbose_name="Last Name")
-    email = models.EmailField(verbose_name="Email")
+def _upload_company_logos(self, filename):
+    """
+    Returns a string representing the file path where the
+    company logo is to be uploaded.
+
+    :param self: The Company object
+    :param filename: The filename of the company logo
+    :return: The file path where the company logo is to be
+             uploaded
+    """
+    return "company_logos/%s/%s" % (self.title, filename)
+
+
+class Profile(AbstractUser):
     phone = PhoneNumberField(region="IN", verbose_name="Phone Number")
     profile_picture = models.ImageField(
-        upload_to=_profile_picture, verbose_name="Profile Picture"
+        upload_to=_profile_picture,
+        verbose_name="Profile Picture",
+        null=True,
+        blank=True,
     )
-
-    @property
-    def full_name(self):
-        """
-        Returns the full name of the profile.
-
-        Returns:
-            str: The full name of the profile.
-        """
-        return f"{self.first_name} {self.last_name}"
 
     def __str__(self):
         """
@@ -56,7 +60,7 @@ class Profile(TimeStampedModel):
         Returns:
             str: The full name of the profile.
         """
-        return self.full_name
+        return self.username
 
 
 class Address(TimeStampedModel):
@@ -105,6 +109,7 @@ class Skills(TimeStampedModel):
         Profile, on_delete=models.PROTECT, related_name="skills"
     )
     name = models.CharField(max_length=100, verbose_name="Skill")
+    proficiency = models.IntegerField(verbose_name="Proficiency Percentage")
 
     def __str__(self):
         """
@@ -133,9 +138,11 @@ class Project(TitleDescriptionModel, TimeStampedModel):
     profile = models.ForeignKey(
         Profile, on_delete=models.PROTECT, related_name="projects"
     )
-    image = models.ImageField(upload_to="projects", verbose_name="Image")
-    live_url = models.URLField(verbose_name="Live URL")
-    source_url = models.URLField(verbose_name="Source URL")
+    image = models.ImageField(
+        upload_to="projects", verbose_name="Image", null=True, blank=True
+    )
+    live_url = models.URLField(verbose_name="Live URL", null=True, blank=True)
+    source_url = models.URLField(verbose_name="Source URL", null=True, blank=True)
     technologies = models.ManyToManyField(Technology, related_name="projects")
 
     def __str__(self):
@@ -148,9 +155,24 @@ class Project(TitleDescriptionModel, TimeStampedModel):
         return self.title
 
 
+class Company(TitleDescriptionModel):
+    logo = models.ImageField(upload_to=_upload_company_logos, verbose_name="Logo")
+
+    def __str__(self):
+        """
+        Returns the title of the company as the string representation of the object.
+
+        Returns:
+            str: The title of the company.
+        """
+        return self.title
+
+
 class Experience(models.Model):
     role = models.CharField(max_length=100)
-    company = models.CharField(max_length=100)
+    company = models.OneToOneField(
+        "aboutme.Company", on_delete=models.PROTECT, related_name="experience"
+    )
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)
     description = models.TextField(verbose_name="Description")
@@ -163,7 +185,7 @@ class Experience(models.Model):
         Returns:
             str: The role of the experience.
         """
-        return self.role
+        return "%s at %s" % (self.role, self.company.title)
 
 
 class ContactMessage(TimeStampedModel):

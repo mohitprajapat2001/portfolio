@@ -42,9 +42,11 @@ export default function AboutMeReveal() {
                     </p>
                 </div>
             </BoxReveal>
-            <InteractiveHoverButton className="mt-5">
-                <Link target="_blank" to="https://github.com/mohitprajapat2001/">Check out Github Profile</Link>
-            </InteractiveHoverButton>
+            <Link target="_blank" to="https://github.com/mohitprajapat2001/">
+                <InteractiveHoverButton className="mt-5">
+                    Check out Github Profile
+                </InteractiveHoverButton>
+            </Link>
         </div>
     );
 }

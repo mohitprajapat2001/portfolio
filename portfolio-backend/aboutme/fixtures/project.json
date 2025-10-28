@@ -1,0 +1,77 @@
+[
+    {
+        "title": "Django OTP Keygen",
+        "description": "A **configurable One-Time Password (OTP)** generator package built with Django. Supports multiple OTP formats — `DIGIT`, `TEXT`, and `MIXED` — with flexible expiry and retry policies. Published on **PyPI**.\n\nFeatures:\n- Abstract OTP model for reuse\n- Customizable OTP types and validation\n- Admin interface integration\n- Unit tested and production ready",
+        "technologies": [
+            "Django",
+            "Python",
+            "PostgreSQL",
+            "Pytest",
+            "Git"
+        ]
+    },
+    {
+        "title": "Django Admin Bulk IO",
+        "description": "A **bulk import/export tool** for Django Admin to simplify large dataset operations. Supports **CSV, JSON, and Excel** formats with custom field mapping.\n\nFeatures:\n- Admin action-based bulk import/export\n- Async support with **Celery + Redis**\n- Built-in validation layer\n- Open-source and PyPI published",
+        "technologies": [
+            "Django",
+            "Celery",
+            "Redis",
+            "PostgreSQL",
+            "Python",
+            "Git"
+        ]
+    },
+    {
+        "title": "Personal Portfolio Website",
+        "description": "A full-stack **portfolio web application** showcasing skills, projects, and achievements.\n\nBuilt using **Django REST Framework** for the backend API and **React + ShadCN UI** for the frontend. Fully responsive, SEO optimized, and deployed with **Docker + Nginx** on **AWS EC2**.\n\nFeatures:\n- REST API for projects, skills, and contact forms\n- Modern React design with animations\n- CI/CD via GitHub Actions\n- Google Analytics + Sitemap + SEO ready",
+        "technologies": [
+            "Django REST Framework",
+            "React",
+            "Docker",
+            "Nginx",
+            "AWS",
+            "PostgreSQL",
+            "Tailwind CSS",
+            "Git"
+        ]
+    },
+    {
+        "title": "E-Commerce Platform API",
+        "description": "A scalable **e-commerce backend** with user authentication, product management, order tracking, and Stripe integration.\n\nFeatures:\n- **JWT authentication**\n- **Stripe payments**\n- Async order notifications using **Celery + Redis**\n- Elasticsearch-based product search\n- Dockerized microservice-ready setup",
+        "technologies": [
+            "Django REST Framework",
+            "Elasticsearch",
+            "Celery",
+            "Redis",
+            "Docker",
+            "PostgreSQL",
+            "Python"
+        ]
+    },
+    {
+        "title": "AI-Powered Resume Parser",
+        "description": "An **AI-powered resume parser** and matcher built with **FastAPI** and **LangChain**, integrating **OpenAI GPT models** for skill extraction and candidate-job matching.\n\nFeatures:\n- Extracts structured data from PDF resumes\n- Uses GPT-based semantic skill mapping\n- RESTful API with FastAPI\n- Deployed on AWS Lambda with Docker support",
+        "technologies": [
+            "FastAPI",
+            "OpenAI API",
+            "LangChain",
+            "AWS",
+            "Docker",
+            "PostgreSQL"
+        ]
+    },
+    {
+        "title": "Real-Time Chat App",
+        "description": "A **real-time chat application** using **Django Channels** and **React**, featuring WebSocket-based messaging and Redis pub/sub for scalability.\n\nFeatures:\n- Typing indicators, read receipts, and online status\n- Authentication via JWT\n- Message persistence with PostgreSQL\n- Deployed via Docker + Nginx reverse proxy",
+        "technologies": [
+            "Django",
+            "React",
+            "Redis",
+            "Docker",
+            "PostgreSQL",
+            "Nginx",
+            "LangChain"
+        ]
+    }
+]

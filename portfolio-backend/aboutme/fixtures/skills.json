@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Python",
+        "proficiency": 90
+    },
+    {
+        "name": "Django",
+        "proficiency": 90
+    },
+    {
+        "name": "Django REST Framework",
+        "proficiency": 88
+    },
+    {
+        "name": "FastAPI",
+        "proficiency": 80
+    },
+    {
+        "name": "Flask",
+        "proficiency": 75
+    },
+    {
+        "name": "LangChain",
+        "proficiency": 80
+    },
+    {
+        "name": "OpenAI API / LLMs",
+        "proficiency": 75
+    },
+    {
+        "name": "PostgreSQL",
+        "proficiency": 85
+    },
+    {
+        "name": "MySQL",
+        "proficiency": 80
+    },
+    {
+        "name": "MongoDB / NoSQL",
+        "proficiency": 70
+    },
+    {
+        "name": "Redis / Celery",
+        "proficiency": 75
+    },
+    {
+        "name": "Elasticsearch",
+        "proficiency": 70
+    },
+    {
+        "name": "Docker",
+        "proficiency": 75
+    },
+    {
+        "name": "AWS (EC2, S3, RDS, Route53)",
+        "proficiency": 70
+    },
+    {
+        "name": "Git / GitHub / CI-CD",
+        "proficiency": 80
+    },
+    {
+        "name": "React",
+        "proficiency": 75
+    },
+    {
+        "name": "JavaScript / TypeScript",
+        "proficiency": 70
+    },
+    {
+        "name": "HTML / CSS / Tailwind",
+        "proficiency": 85
+    },
+    {
+        "name": "REST APIs",
+        "proficiency": 90
+    },
+    {
+        "name": "Web Security",
+        "proficiency": 75
+    },
+    {
+        "name": "Linux",
+        "proficiency": 70
+    },
+    {
+        "name": "Unit Testing (Pytest)",
+        "proficiency": 80
+    },
+    {
+        "name": "DevOps",
+        "proficiency": 75
+    },
+    {
+        "name": "Cloud Computing",
+        "proficiency": 70
+    },
+    {
+        "name": "Data Analysis",
+        "proficiency": 70
+    }
+]
